@@ -68,10 +68,11 @@ $db = new \PDO(
     [
         \PDO::ATTR_EMULATE_PREPARES =&gt; false,
         \PDO::ATTR_ERRMODE =&gt; \PDO::ERRMODE_EXCEPTION,
+        \PDO::ATTR_DEFAULT_FETCH_MODE =&gt; \PDO::FETCH_ASSOC,
     ]
 );
 $stmt = $db-&gt;query("SELECT NOW() AS server_time");
-echo $stmt-&gt;fetchColumn();</pre>
+var_dump($stmt-&gt;fetchAll());</pre>
     </div>
 
     <div class="card">
@@ -83,10 +84,11 @@ $db = new \PDO(
     'test',
     [
         \PDO::ATTR_ERRMODE =&gt; \PDO::ERRMODE_EXCEPTION,
+        \PDO::ATTR_DEFAULT_FETCH_MODE =&gt; \PDO::FETCH_ASSOC,
     ]
 );
 $stmt = $db-&gt;query("SELECT NOW() AS server_time");
-echo $stmt-&gt;fetchColumn();</pre>
+var_dump($stmt-&gt;fetchAll());</pre>
     </div>
 
     <p>
